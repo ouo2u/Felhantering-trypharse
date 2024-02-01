@@ -1,21 +1,25 @@
 ﻿int resultat;
-if (!int.TryParse(Console.ReadLine(), out resultat))
-    Console.WriteLine("Skriv in en siffra");
     
     bool TryParse(string s, out int result)
     { 
-        int result=5;
         
-        if (TryParse)
+        try 
         {
-            Console.WriteLine("funkar?"+ result);
+         result=int.Parse(s);
+         return true;  
             
         }
-        else
+        catch
         {
-            Console.WriteLine("gg");
+            result=0;
+            return false;
+            
 
         }
     
     }
-   
+   if (!TryParse(Console.ReadLine(), out resultat))
+    Console.WriteLine("Skriv in en siffra");
+
+    else
+    Console.WriteLine("done?");
